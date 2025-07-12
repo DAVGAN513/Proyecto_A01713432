@@ -1,27 +1,40 @@
 #include "Combatiente.hpp"
+#include "Guerrero.hpp"
+#include "Arquero.hpp"
+#include "Mago.hpp"
 #include <iostream>
 using namespace std;
 
 int main(){
-    Combatiente personaje (100,100,15,3);
-    Combatiente enemigo (100,100,20,2);
+    Guerrero guerrero (100,100,15,3,75,25);
+    Arquero arquero (100,100,20,2,80);
+    Mago mago (120,120,25,3,85);
+
 
     cout <<"Valores iniciales: ";
-    personaje.imprimir();
-    enemigo.imprimir();
+    guerrero.imprimir();
+    arquero.imprimir();
+    mago.imprimir();
 
-    cout <<"Tu personaje ataca al enemigo: ";
-    personaje.atacar(enemigo);
+    cout <<"Guerrero ataca al Arquero: ";
+    guerrero.atacar(arquero);
+    arquero.imprimir();
+
+    cout <<"Arquero ataca al Mago: ";
+    arquero.atacar(mago);
+    mago.imprimir();
+
+    cout <<"Mago ataca al Guerrero: ";
+    mago.atacar(guerrero);
+    guerrero.imprimir();
+
+    cout <<"Arquero ataca al Guerrero: ";
+    arquero.atacar(guerrero);
+    guerrero.imprimir();
 
     cout <<"Condicion despues de tu ataque es de: ";
-    personaje.imprimir();
-    enemigo.imprimir();
-
-    cout <<"Enemigo te ataca: ";
-    enemigo.atacar(personaje);
-
-    cout <<"Condicion despues de tu ataque es de: ";
-    personaje.imprimir();
-    enemigo.imprimir();
+    guerrero.imprimir();
+    arquero.imprimir();
+    mago.imprimir();
     return 0;
 }

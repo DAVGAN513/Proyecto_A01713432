@@ -31,8 +31,8 @@ class Combatiente{
         //metodos
         int porcentajeSalud() const;
         void imprimeBarra() const;
-        void recibeAtaque(int ptosAtaque);
-        void atacar(Combatiente& objetivo);
-        void imprimir() const;
+        virtual void recibeAtaque(int ptosAtaque);
+        virtual void atacar(Combatiente& objetivo);
+        virtual void imprimir() const;
 };
 #endif
