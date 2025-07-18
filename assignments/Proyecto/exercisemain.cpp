@@ -3,38 +3,48 @@
 #include "Arquero.hpp"
 #include "Mago.hpp"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main(){
-    Guerrero guerrero (100,100,15,3,75,25);
-    Arquero arquero (100,100,20,2,80);
-    Mago mago (120,120,25,3,85);
+    Combatiente* c1 = new Guerrero(100, 100, 15, 3, 75, 25);
+    Combatiente* c2 = new Arquero(100, 100, 20, 2, 80);
+    Combatiente* c3 = new Mago(120, 120, 25, 3, 85);
 
+    vector<Combatiente*> combatientes;
+    combatientes.push_back(c1);
+    combatientes.push_back(c2);
+    combatientes.push_back(c3);
 
-    cout <<"Valores iniciales: ";
-    guerrero.imprimir();
-    arquero.imprimir();
-    mago.imprimir();
+    cout <<"=== ESTADO INICIAL DE TUS PERSONAJES ===" << endl;
+    c1->imprimir();
+    cout << endl;
+    c2->imprimir();
+    cout << endl;
+    c3->imprimir();
+    cout << endl;
 
-    cout <<"Guerrero ataca al Arquero: ";
-    guerrero.atacar(arquero);
-    arquero.imprimir();
+    cout <<"=== ATAQUES DEL PRIMER COMBATIENTE ===" << endl;
+    cout <<"Guerrero ataca a Arquero: " << endl;
+    c1->atacar(*c2);
+    cout <<"Estado del Arquero: " << endl;
+    c2->imprimir();
+    cout << endl;
 
-    cout <<"Arquero ataca al Mago: ";
-    arquero.atacar(mago);
-    mago.imprimir();
+    cout <<"Guerrero ataca a Mago: " << endl;
+    c1->atacar(*c3);
+    cout <<"Estado del Mago :" << endl;
+    c3->imprimir();
+    cout << endl;
 
-    cout <<"Mago ataca al Guerrero: ";
-    mago.atacar(guerrero);
-    guerrero.imprimir();
+    cout <<"Mago ataca a Arquero: " <<endl;
+    c3->atacar(*c2);
+    cout <<"Estado del Arquero: " <<endl;
+    c2->imprimir();
+    cout << endl;
 
-    cout <<"Arquero ataca al Guerrero: ";
-    arquero.atacar(guerrero);
-    guerrero.imprimir();
-
-    cout <<"Condicion despues de tu ataque es de: ";
-    guerrero.imprimir();
-    arquero.imprimir();
-    mago.imprimir();
+    delete c1;
+    delete c2;
+    delete c3;
     return 0;
 }

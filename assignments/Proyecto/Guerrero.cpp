@@ -63,3 +63,10 @@ void Guerrero::atacar(Combatiente& objetivo){
     cout <<"El guerro ataco con una fuerza de: "<<daño<<endl;
     objetivo.recibeAtaque(daño);
 }
+bool Guerrero::estaVivo() const {
+    return getSalud() > 0 || escudo > 0;
+    if (!estaVivo()) {
+    cout << "El guerrero ha caído en batalla." << endl;
+    }
+
+}

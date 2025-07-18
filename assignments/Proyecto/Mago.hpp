@@ -21,5 +21,6 @@ class Mago: public Combatiente{
         void imprimir() const override;
         void recibeAtaque(int ptosAtaque) override;
         void atacar(Combatiente& objetivo) override;
+        bool estaVivo() const override;
 };
 #endif

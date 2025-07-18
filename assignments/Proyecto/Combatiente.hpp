@@ -34,5 +34,6 @@ class Combatiente{
         virtual void recibeAtaque(int ptosAtaque);
         virtual void atacar(Combatiente& objetivo);
         virtual void imprimir() const;
+        virtual bool estaVivo() const = 0;
 };
 #endif

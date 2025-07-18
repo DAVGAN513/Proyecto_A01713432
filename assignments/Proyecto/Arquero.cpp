@@ -46,3 +46,9 @@ void Arquero::atacar(Combatiente& objetivo){
     }
     objetivo.recibeAtaque(daño);
 }
+bool Arquero::estaVivo() const {
+    return getSalud() > 0 || precision >= 60;
+    if (!estaVivo()) {
+    cout << "El arquero ha caído en batalla." << endl;
+    }
+}

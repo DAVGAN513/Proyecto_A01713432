@@ -57,3 +57,14 @@ void Mago::atacar(Combatiente& objetivo){
     }
     objetivo.recibeAtaque(daño);
 }
+bool Mago::estaVivo() const {
+    if (getSalud() > 0) return true;
+    if (mana >= 50) {
+        cout << "El mago usa su maná para mantenerse con vida" << endl;
+        return true;
+    }
+    return false;
+    if (!estaVivo()) {
+    cout << "El Mago ha caído en batalla." << endl;
+    }
+}
